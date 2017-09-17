@@ -2,6 +2,7 @@ import express from 'express';
 import constants from './config/constants';
 import './config/dbconfig';
 import middlewaresConfig from './config/middlewares';
+import apiRoutes from './modules';
 
 const app = express();
 
@@ -14,6 +15,8 @@ app.get('/', (req,res) => {
 app.get('/thibault', (req,res) => {
 	res.send('Hello Mr Huckert!');
 });
+
+apiRoutes(app);
 
 app.listen(constants.PORT, err => {
  if(err){
