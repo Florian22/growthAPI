@@ -1,9 +1,9 @@
 import mongoose, { Schema } from 'mongoose';
 import validator from 'validator';
 import { hashSync, compareSync } from 'bcrypt-nodejs';
-
+import jwt from 'jsonwebtoken';
 import { passwordReg } from './user.validations';
-
+import constants from '../../config/constants';
 const UserSchema = new Schema({
   email: {
     type: String,
@@ -63,7 +63,22 @@ UserSchema.methods = {
   },
   authenticateUser(password){
     return compareSync(password, this.password);
-  }
-};
+  },
+  createToken(){
+    return jwt.sign({
+      _id: this.id,
+    },
+    constants.JWT_SECRET,
+    );
+  }, //one } missing ?
+  toJSON(){
+    return{
+      _id: this._id,
+      userName: this.userName,
+      email: this.email,
+      token: `JWT ${this.createToken()}`,
+    };
+  },
+}; 
 
 export default mongoose.model('User', UserSchema);

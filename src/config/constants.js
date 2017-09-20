@@ -1,5 +1,6 @@
 const devConfig = {
 	MONGO_URL: 'mongodb://localhost/growthapi-dev',
+	JWT_SECRET: 'secretfordev',
 };
 
 const testConfig = {
