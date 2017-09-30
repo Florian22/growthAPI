@@ -4,6 +4,7 @@ import { hashSync, compareSync } from 'bcrypt-nodejs';
 import jwt from 'jsonwebtoken';
 import { passwordReg } from './user.validations';
 import constants from '../../config/constants';
+
 const UserSchema = new Schema({
   email: {
     type: String,
@@ -65,14 +66,15 @@ UserSchema.methods = {
     return compareSync(password, this.password);
   },
   createToken(){
-    return jwt.sign({
-      _id: this.id,
+    return jwt.sign(
+    {
+      _id: this._id,
     },
     constants.JWT_SECRET,
     );
   }, //one } missing ?
   toJSON(){
-    return{
+    return {
       _id: this._id,
       userName: this.userName,
       email: this.email,
