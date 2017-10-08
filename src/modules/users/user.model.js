@@ -46,7 +46,7 @@ const UserSchema = new Schema({
       message: '{VALUE} is not a valid password!',
     },
   },
-});
+},{timestamps:true});
 
 UserSchema.pre('save', function (next){
   // encript only if password modified only
