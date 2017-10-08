@@ -31,18 +31,13 @@ const jwtOptions = {
 };
 
 const jwtStrategy = new JWTStrategy(jwtOptions, async(payload,done)=>{
-	console.log("0");
 	try{
 		const user = await User.findById(payload._id);
-		console.log("1");
 		if(!user){
-			console.log("2");
 			return done(null,false);
 		}
-		console.log("3");
 		return done(null,user);
 	}catch(e){
-		console.log("4");
 		return done(e,false);
 	}
 });

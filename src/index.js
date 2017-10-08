@@ -13,7 +13,10 @@ app.get('/', (req,res) => {
 });
 
 app.get('/thibault', (req,res) => {
-	res.send('Hello Mr Huckert!');
+	var json = `{
+		"message": "Hello"
+	}`;
+	res.send(json);
 });
 
 apiRoutes(app);
