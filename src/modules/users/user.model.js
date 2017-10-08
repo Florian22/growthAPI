@@ -81,6 +81,13 @@ UserSchema.methods = {
       token: `Bearer ${this.createToken()}`,
     };
   },
+  toAuthJSON(){
+    return {
+      _id: this._id,
+      userName: this.userName,
+      email: this.email,
+    };
+  },
 }; 
 
 export default mongoose.model('User', UserSchema);

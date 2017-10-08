@@ -8,3 +8,12 @@ export async function createCategoty(req, res){
 		return res.status(400).json(e);
 	}
 }
+
+export async function getCategoryById(req, res){
+	try{
+		const categoty = await Category.findById(res.params.id);
+		return res.status(201).json(categoty);
+	}catch(e){
+		return res.status(400).json(e);
+	}
+}

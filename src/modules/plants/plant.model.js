@@ -11,7 +11,7 @@ const PlantSchema = new Schema({
     unique: true,
     required: [true, 'categoryName is required!'],
     trim: true,
-    minlength: [5, 'CategoryName need to be longer'],
+    minlength: [5, 'categoryName need to be longer'],
   },
   originalName:{
     type: String,
@@ -47,7 +47,8 @@ PlantSchema.methods = {
 	toJSON(){
     return {
       _id: this._id,
-      categoryName: this.categoryName,
+      originalName: this.originalName,
+      slug: this.slug,
     };
   },
 	};
