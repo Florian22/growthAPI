@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import * as plantController from './plant.controller';
+import * as plantController from './plant.controllers';
 import { authJwt } from '../../services/auth.services';
 import validate from 'express-validation';
 import plantValidation from './plant.validation';

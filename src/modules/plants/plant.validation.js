@@ -4,6 +4,6 @@ export default {
 	addPlant(){
 		body: {
 			name: Joi.string().required(),
-		}
-	}
-}
+		},
+	},
+};
