@@ -1,7 +1,7 @@
 import Joi from 'joi';
 
 export default {
-	addPlant(){
+	addPlant:{
 		body: {
 			name: Joi.string().required(),
 		},
