@@ -7,6 +7,6 @@ import { authJwt } from '../../services/auth.services';
 const routes = new Router();
 
 routes.post('/', authJwt, categoryController.createCategory);
-routes.get('/:id', categoryController.getPlantById);
+routes.get('/:id', categoryController.getCategoryById);
 
 export default routes;
