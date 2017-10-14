@@ -8,5 +8,6 @@ const routes = new Router();
 routes.post('/', authJwt, validate(plantValidation.addPlant),plantController.addPlant);
 routes.get('/:id',plantController.getPlantById );
 routes.get('/', plantController.getPlantsList);
+routes.get('/:skip:limit',plantController.getPlantsList );
 
 export default routes;

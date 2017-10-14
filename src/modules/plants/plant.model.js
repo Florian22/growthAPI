@@ -59,6 +59,14 @@ PlantSchema.statics = {
       ...args,
     });
   },
+  list({skip = 0, limit = 25} = {}){
+    return this.find()
+    .sort({createdAt: -1}) //order by created desc
+    .skip(skip)
+    .limit(limit)
+    .populate('category')
+  },
+
 };
 
 

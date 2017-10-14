@@ -11,7 +11,7 @@ export async function createCategory(req, res){
 
 export async function getCategoryById(req, res){
 	try{
-		const category = await Category.findById(res.params.id);
+		const category = await Category.findById(req.params.id);
 		return res.status(201).json(category);
 	}catch(e){
 		return res.status(400).json(e);

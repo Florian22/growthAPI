@@ -11,7 +11,7 @@ export async function addPlant(req, res){
 
 export async function getPlantById(req, res){
 	try{
-		const plant = await Plant.findById(res.params.id);
+		const plant = await Plant.findById(req.params.id);
 		return res.status(201).json(plant);
 	}catch(e){
 		return res.status(400).json(e);
@@ -19,8 +19,10 @@ export async function getPlantById(req, res){
 }
 
 export async function getPlantsList(req, res){
+	const limit = parseInt(res.query.limit,0);
+	const skip = parseInt(res.query.skip,0);
 	try{
-		const plants = await Plant.find().populate('category');
+		const plants = await Plant.list({skpi, limit});
 		return res.status(201).json(plants);
 	}catch(e){
 		return res.status(400).json(e);
