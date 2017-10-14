@@ -7,5 +7,5 @@ import categoryValidation from './category.validation';
 const routes = new Router();
 //routes.post('/', authJwt, validate(categoryValidation.addPlant),plantController.addPlant);
 //routes.post('/', authJwt, categoryController.createCategory);
-//routes.get('/:id',categoryController.getPlantById );
+routes.get('/:id', categoryController.getPlantById );
 export default routes;
