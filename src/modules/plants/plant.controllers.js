@@ -17,3 +17,12 @@ export async function getPlantById(req, res){
 		return res.status(400).json(e);
 	}
 }
+
+export async function getPlantsList(req, res){
+	try{
+		const plants = await Plant.find().populate('category');
+		return res.status(201).json(plants);
+	}catch(e){
+		return res.status(400).json(e);
+	}
+}

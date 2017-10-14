@@ -17,3 +17,12 @@ export async function getCategoryById(req, res){
 		return res.status(400).json(e);
 	}
 }
+
+export async function getCategoryList(req, res){
+	try{
+		const categories = await Category.find();
+		return res.status(201).json(categories);
+	}catch(e){
+		return res.status(400).json(e);
+	}
+}

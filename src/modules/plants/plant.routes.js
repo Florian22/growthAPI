@@ -7,4 +7,6 @@ import plantValidation from './plant.validation';
 const routes = new Router();
 routes.post('/', authJwt, validate(plantValidation.addPlant),plantController.addPlant);
 routes.get('/:id',plantController.getPlantById );
+routes.get('/', plantController.getPlantsList);
+
 export default routes;
