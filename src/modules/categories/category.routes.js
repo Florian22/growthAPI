@@ -8,5 +8,5 @@ const routes = new Router();
 
 routes.post('/', authJwt, categoryController.createCategory);
 routes.get('/:id', categoryController.getCategoryById);
-routes.get('/', plantController.getCategoryList);
+routes.get('/', categoryController.getCategoryList);
 export default routes;
