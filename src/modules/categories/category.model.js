@@ -28,10 +28,11 @@ CategorySchema.methods = {
 
 CategorySchema.statics = {
   createCategory(args){
-    return this.create(args);
-    /*return this.create({
-      ...args
-    });*/
+    //return this.create(args);
+    console.log(args);
+    return this.create({
+      ...args,
+    });
   },
 };
 
