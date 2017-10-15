@@ -2,7 +2,7 @@ import Category from './category.model';
 
 export async function createCategory(req, res){
 	try{
-		const category = await Category.createCategoty(req.body);
+		const category = await Category.createCategory(req.body);
 		return res.status(201).json(category);
 	}catch(e){
 		return res.status(400).json(e);
