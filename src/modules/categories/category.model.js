@@ -29,7 +29,7 @@ CategorySchema.methods = {
 CategorySchema.statics = {
   createCategory(args){
     return this.create({
-      ...args,
+      ...args
     });
   },
 };
