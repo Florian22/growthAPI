@@ -22,7 +22,7 @@ export async function getPlantsList(req, res){
 	const limit = parseInt(req.query.limit,0);
 	const skip = parseInt(req.query.skip,0);
 	try{
-		const plants = await Plant.list({skpi, limit});
+		const plants = await Plant.list({skip, limit});
 		return res.status(201).json(plants);
 	}catch(e){
 		return res.status(400).json(e);
