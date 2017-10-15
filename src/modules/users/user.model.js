@@ -85,7 +85,7 @@ UserSchema.methods = {
     return {
       _id: this._id,
       userName: this.userName,
-      email: this.email,7
+      email: this.email,
       token: `Bearer ${this.createToken()}`,
     };
   },
