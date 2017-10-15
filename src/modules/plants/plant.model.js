@@ -49,6 +49,7 @@ PlantSchema.methods = {
       _id: this._id,
       originalName: this.originalName,
       slug: this.slug,
+      category: this.category,
     };
   },
 	};
