@@ -1,4 +1,5 @@
 import Plant from './plant.model';
+import Category from '../categories/category.model';
 
 export async function addPlant(req, res){
 	try{
