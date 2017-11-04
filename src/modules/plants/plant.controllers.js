@@ -33,7 +33,7 @@ export async function getPlantsByCategoryID(req, res){
 	try{
 		const category = await Category.findById(req.params.id);
 		const plants = await Plant.find().byCategory(category).exec(function(err, plants) {
-			console.log(err);
+			console.log("Error: " + err);
   			return res.status(201).json(plants);
 		});
 	}catch(e){
