@@ -71,7 +71,6 @@ PlantSchema.statics = {
 };
 
 PlantSchema.query.byCategory = function(name) {
-  console.log("Name to search: "+ name);
   return this.find({ category: name });
 };
 
