@@ -5,9 +5,11 @@ import validate from 'express-validation';
 import plantValidation from './plant.validation';
 
 const routes = new Router();
+routes.get('/:id/categories', plantController.getPlantsByCategoryID);
 routes.post('/', authJwt, validate(plantValidation.addPlant),plantController.addPlant);
 routes.get('/:id',plantController.getPlantById );
 routes.get('/', plantController.getPlantsList);
+
 //routes.get('/:skip:limit',plantController.getPlantsList );
 
 export default routes;
