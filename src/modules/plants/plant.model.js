@@ -70,6 +70,8 @@ PlantSchema.statics = {
 
 };
 
-
+PlantSchema.query.byCategory = function(name) {
+  return this.find({ category: name });
+};
 
 export default mongoose.model('Plant', PlantSchema);

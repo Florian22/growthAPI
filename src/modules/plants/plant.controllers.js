@@ -28,3 +28,15 @@ export async function getPlantsList(req, res){
 		return res.status(400).json(e);
 	}
 }
+
+export async function getPlantsByCategoryID(req, res){
+	try{
+		const category = await Category.findById(req.params.id);
+		const plants = await Plant.find().byCategory(category).exec(function(err, plants) {
+			console.log(err);
+  			return res.status(201).json(plants);
+		});
+	}catch(e){
+		return res.status(400).json(e);
+	}
+}
